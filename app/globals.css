@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Estilos globais do projeto */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  background-color: #0a0a0a; /* Cor de fundo escura */
+  color: #f0f0f0; /* Cor do texto claro */
+}
+
+/* Cores da marca */
+.bg-brand-black {
+  background-color: #0a0a0a;
+}
+
+.bg-brand-dark {
+  background-color: #1a1a1a;
+}
+
+.text-brand-yellow {
+  color: #ffc107;
+}
+
+.bg-brand-yellow {
+  background-color: #ffc107;
+}
+
+.border-brand-gray {
+  border-color: #333;
+}
+
+.text-brand-textGray {
+  color: #aaa;
+}
+
+/* Estilos para o v0 */
+.v0-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}

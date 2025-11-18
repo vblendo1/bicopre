@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
-import { Header } from './components/Header';
-import { NotificationBar } from './components/NotificationBar';
-import { HeroSection } from './components/HeroSection';
-import { FeatureGrid } from './components/FeatureGrid';
-import { OpportunityFeed } from './components/OpportunityFeed';
-import { AiAdvisor } from './components/AiAdvisor';
-import { VipModal } from './components/VipModal';
-import { AdminLogin } from './components/AdminLogin';
-import { AdminDashboard } from './components/AdminDashboard';
-import { UserTier, PageView } from './types';
+import { Header } from '../components/Header';
+import { NotificationBar } from '../components/NotificationBar';
+import { HeroSection } from '../components/HeroSection';
+import { FeatureGrid } from '../components/FeatureGrid';
+import { OpportunityFeed } from '../components/OpportunityFeed';
+import { AiAdvisor } from '../components/AiAdvisor';
+import { VipModal } from '../components/VipModal';
+import { AdminLogin } from '../components/AdminLogin';
+import { AdminDashboard } from '../components/AdminDashboard';
+import { UserTier, PageView } from '../types';
 import { Lock } from 'lucide-react';
 
-const App: React.FC = () => {
+export default function Home() {
   const [currentView, setCurrentView] = useState<PageView>('APP');
   const [isAiOpen, setIsAiOpen] = useState(false);
   const [isVipModalOpen, setIsVipModalOpen] = useState(false);
@@ -60,7 +60,6 @@ const App: React.FC = () => {
     <div className="min-h-screen bg-brand-black flex flex-col font-sans selection:bg-brand-yellow selection:text-black">
       <NotificationBar />
       
-      {/* FIXED: Connected onSecretTrigger properly */}
       <Header 
         onOpenVip={() => setIsVipModalOpen(true)} 
         userTier={userTier} 
@@ -89,7 +88,6 @@ const App: React.FC = () => {
           <a href="#" className="hover:text-white">Suporte</a>
         </div>
         
-        {/* FIXED: High visibility Admin Button */}
         <button 
           onClick={() => setCurrentView('ADMIN_LOGIN')} 
           className="mt-4 bg-red-900/30 hover:bg-red-900/50 text-red-500 border border-red-900 rounded px-4 py-2 text-xs font-bold uppercase tracking-widest flex items-center gap-2 transition-all"
@@ -110,4 +108,3 @@ const App: React.FC = () => {
   );
 };
 
-export default App;
